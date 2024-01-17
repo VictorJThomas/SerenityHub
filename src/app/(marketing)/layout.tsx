@@ -1,9 +1,18 @@
-export default function MarketingLayout({
+import { Navbar } from "./_components/navbar";
+
+const MarketingLayout = ({
     children
-}: {children: React.ReactNode}) {
+}: {
+    children: React.ReactNode;
+}) => {
     return (
-        <main className="flex items-center justify-center bg-[F0F0F0] dark:bg-[1F1F1F]">
-            {children}
-        </main>
+        <div className="h-full dark:bg-[#0F0F0F]">
+            <Navbar />
+            <main className="h-full pt-40">
+                {children}
+            </main>
+        </div>
     )
-} 
+}
+
+export default MarketingLayout;

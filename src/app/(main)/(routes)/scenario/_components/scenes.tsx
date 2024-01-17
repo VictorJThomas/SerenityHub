@@ -8,16 +8,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
-import { useMediaQuery } from "@uidotdev/usehooks";
+// import { useMediaQuery } from "@uidotdev/usehooks";
 
 export const Scenes = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center relative">
       <Carousel className={cn(
-        "w-full max-w-[50rem]",
+        "w-full max-w-[40rem]",
         isMobile && "px-10 w-[90%]"
       )}>
         <CarouselContent>
@@ -33,7 +34,7 @@ export const Scenes = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {!isMobile && (
+        {isMobile && (
           <>
             <CarouselPrevious />
             <CarouselNext />
